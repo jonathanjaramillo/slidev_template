@@ -484,5 +484,317 @@ Your Name · Your Organization
 </div>
 
 <div class="pt-8 text-sm opacity-60">
-Backup slides follow if applicable
+Glow-box variants follow ↓
+</div>
+
+---
+layout: center
+class: text-center
+glowSeed: 77
+---
+
+# Glow-Box Variants
+
+### Wrap any card in `<BorderGlow>` to add a directional hover glow
+
+<div class="mt-8 text-sm opacity-60 font-mono">
+`:animated="true"` → sweep plays on mount (use in cheat sheet)<br/>
+`:animated="false"` → glow only on hover (use in real decks)
+</div>
+
+<div class="mt-6 text-sm opacity-50">
+`borderRadius` should match `rounded-lg` (8px) · `glowRadius` controls bleed outside the card
+</div>
+
+---
+glowSeed: 100
+---
+
+# glow-box · Accent Cards
+
+`<BorderGlow>` replaces the outer `<div>`. Set `backgroundColor`, `colors`, and `glowColor` to match the accent.
+
+<div class="grid grid-cols-3 gap-6 mt-8">
+
+<div>
+<BorderGlow
+  background-color="#0d2421"
+  :border-radius="8"
+  :glow-radius="32"
+  :glow-intensity="1.2"
+  glow-color="175 67 60"
+  :colors="['#2dd4bf', '#0d9488', '#5eead4']"
+  :animated="true"
+  class-name="w-full"
+>
+  <div class="rounded-lg overflow-hidden">
+    <div class="text-xs font-mono text-white/25 px-4 pt-2 tracking-wide">glow-box · accent-card · teal</div>
+    <div bg="teal-800/40" px-4 py-2 flex items-center gap-2>
+      <span text-xl>📈</span>
+      <span font-bold>Card Title</span>
+    </div>
+    <div px-4 py-4 text-sm>
+      <div class="text-3xl font-bold text-teal-400 mb-2">stat-value</div>
+      Supporting explanation text goes here.
+    </div>
+  </div>
+</BorderGlow>
+</div>
+
+<div>
+<BorderGlow
+  background-color="#0a0f1f"
+  :border-radius="8"
+  :glow-radius="32"
+  :glow-intensity="1.2"
+  glow-color="217 91 60"
+  :colors="['#60a5fa', '#3b82f6', '#93c5fd']"
+  :animated="true"
+  class-name="w-full"
+>
+  <div class="rounded-lg overflow-hidden">
+    <div class="text-xs font-mono text-white/25 px-4 pt-2 tracking-wide">glow-box · accent-card · blue</div>
+    <div bg="blue-800/40" px-4 py-2 flex items-center gap-2>
+      <span text-xl>🏗️</span>
+      <span font-bold>Card Title</span>
+    </div>
+    <div px-4 py-3 text-sm>
+      Supporting text with <strong>bold</strong> where needed.
+    </div>
+  </div>
+</BorderGlow>
+</div>
+
+<div>
+<BorderGlow
+  background-color="#1a0e05"
+  :border-radius="8"
+  :glow-radius="32"
+  :glow-intensity="1.2"
+  glow-color="25 95 60"
+  :colors="['#fb923c', '#ea580c', '#fed7aa']"
+  :animated="true"
+  class-name="w-full"
+>
+  <div class="rounded-lg overflow-hidden">
+    <div class="text-xs font-mono text-white/25 px-4 pt-2 tracking-wide">glow-box · accent-card · orange</div>
+    <div bg="orange-800/40" px-4 py-2 flex items-center gap-2>
+      <span text-xl>🔧</span>
+      <span font-bold>Card Title</span>
+    </div>
+    <div px-4 py-3 text-sm>
+      Supporting text with <em>italic</em> where needed.
+    </div>
+  </div>
+</BorderGlow>
+</div>
+
+</div>
+
+<!-- same pattern for red · amber · violet — just swap backgroundColor + colors + glowColor -->
+
+---
+glowSeed: 175
+---
+
+# glow-box · Glass Card + Bottom Banner
+
+`glass-card` uses neutral colors. `bottom-banner` wraps the flex-center div.
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div>
+<BorderGlow
+  background-color="#0a0a12"
+  :border-radius="8"
+  :glow-radius="32"
+  :glow-intensity="1.1"
+  glow-color="250 70 60"
+  :colors="['#a78bfa', '#818cf8', '#c4b5fd']"
+  :animated="true"
+  class-name="w-full"
+>
+  <div class="rounded-lg overflow-hidden">
+    <div class="text-xs font-mono text-white/25 px-4 pt-2 tracking-wide">glow-box · glass-card · with icon-header</div>
+    <div bg="white/10" backdrop-blur px-4 py-2 flex items-center gap-2>
+      <div i-carbon:flow text-blue-300 text-xl />
+      <span font-bold>How it works</span>
+    </div>
+    <div px-5 py-4>
+      <ul class="text-sm list-disc list-inside space-y-1">
+        <li><strong>Item one:</strong> description</li>
+        <li><strong>Item two:</strong> description</li>
+        <li><strong>Item three:</strong> description</li>
+      </ul>
+    </div>
+  </div>
+</BorderGlow>
+</div>
+
+<div>
+<BorderGlow
+  background-color="#12061a"
+  :border-radius="8"
+  :glow-radius="32"
+  :glow-intensity="1.2"
+  glow-color="270 80 60"
+  :colors="['#c084fc', '#9333ea', '#e9d5ff']"
+  :animated="true"
+  class-name="w-full"
+>
+  <div class="rounded-lg overflow-hidden">
+    <div class="text-xs font-mono text-white/25 px-4 pt-2 tracking-wide">glow-box · accent-card · violet · with callout-box</div>
+    <div bg="violet-800/40" px-4 py-2 flex items-center gap-2>
+      <div i-carbon:idea text-violet-300 text-xl />
+      <span font-bold>Card Title</span>
+    </div>
+    <div px-5 py-4 text-sm>
+      Main content paragraph.
+      <div class="mt-3" border="2 solid red-800" bg="red-800/20" rounded-lg px-4 py-3>
+        <span class="text-xs font-mono text-white/25 block mb-1 tracking-wide">callout-box · red (inside glow-box)</span>
+        ⚠️ <strong>Warning heading</strong><br/>Detail text.
+      </div>
+    </div>
+  </div>
+</BorderGlow>
+</div>
+
+</div>
+
+<div class="mt-8 flex justify-center">
+<BorderGlow
+  background-color="#0a0a10"
+  :border-radius="8"
+  :glow-radius="28"
+  :glow-intensity="0.9"
+  glow-color="220 20 70"
+  :colors="['#e2e8f0', '#94a3b8', '#f1f5f9']"
+  :animated="true"
+  class-name="w-auto"
+>
+  <div class="rounded-lg px-6 py-3 text-lg">
+    <span class="text-xs font-mono text-white/25 block mb-1 tracking-wide">glow-box · bottom-banner</span>
+    Punchline or summary: <strong>key action</strong> or <strong>conclusion</strong>.
+  </div>
+</BorderGlow>
+</div>
+
+---
+glowSeed: 123
+---
+
+# glow-box · Numbered List + Icon List Items
+
+Each row is its own `<BorderGlow>`. The glow reacts per-item on hover.
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+
+<div class="space-y-3">
+<div class="text-xs font-mono text-white/30 mb-2 tracking-wide">glow-box · numbered-list-item</div>
+
+<BorderGlow background-color="#0d2421" :border-radius="8" :glow-radius="24" :glow-intensity="1.1" glow-color="175 67 60" :colors="['#2dd4bf','#0d9488','#5eead4']" :animated="true" class-name="w-full">
+  <div class="rounded-lg flex items-start gap-4 px-5 py-4">
+    <div class="text-4xl font-bold text-teal-400">1</div>
+    <div class="text-lg pt-1">First key point with <strong>emphasis</strong>.</div>
+  </div>
+</BorderGlow>
+
+<BorderGlow background-color="#0d2421" :border-radius="8" :glow-radius="24" :glow-intensity="1.1" glow-color="175 67 60" :colors="['#2dd4bf','#0d9488','#5eead4']" :animated="false" class-name="w-full">
+  <div class="rounded-lg flex items-start gap-4 px-5 py-4">
+    <div class="text-4xl font-bold text-teal-400">2</div>
+    <div class="text-lg pt-1">Second key point — hover to activate glow.</div>
+  </div>
+</BorderGlow>
+</div>
+
+<div class="space-y-3">
+<div class="text-xs font-mono text-white/30 mb-2 tracking-wide">glow-box · icon-list-item</div>
+
+<BorderGlow background-color="#0a0a12" :border-radius="8" :glow-radius="24" :glow-intensity="1.1" glow-color="250 70 60" :colors="['#a78bfa','#818cf8','#c4b5fd']" :animated="true" class-name="w-full">
+  <div class="rounded-lg flex gap-3 items-start px-4 py-3">
+    <div class="text-2xl">🤖</div>
+    <div>Item one — <strong>short bold label</strong> followed by one-sentence description.</div>
+  </div>
+</BorderGlow>
+
+<BorderGlow background-color="#0a0a12" :border-radius="8" :glow-radius="24" :glow-intensity="1.1" glow-color="250 70 60" :colors="['#a78bfa','#818cf8','#c4b5fd']" :animated="false" class-name="w-full">
+  <div class="rounded-lg flex gap-3 items-start px-4 py-3">
+    <div class="text-2xl">📊</div>
+    <div>Item two — <strong>short bold label</strong> hover to activate glow.</div>
+  </div>
+</BorderGlow>
+</div>
+
+</div>
+
+---
+glowSeed: 150
+---
+
+# glow-box · Takeaway Cards
+
+`takeaway-card` with glow — use matching `colors` and `glowColor` per accent.
+
+<div class="grid grid-cols-3 gap-6 mt-8">
+
+<BorderGlow
+  background-color="#0d2421"
+  :border-radius="8"
+  :glow-radius="32"
+  :glow-intensity="1.2"
+  glow-color="175 67 60"
+  :colors="['#2dd4bf', '#0d9488', '#5eead4']"
+  :animated="true"
+  class-name="w-full"
+>
+  <div class="rounded-lg px-6 py-5">
+    <div class="text-xs font-mono text-white/25 mb-2 tracking-wide">glow-box · takeaway-card · teal</div>
+    <div class="text-3xl mb-2">⚖️</div>
+    <div class="font-bold mb-2">Takeaway One</div>
+    One sentence explaining the first takeaway.
+  </div>
+</BorderGlow>
+
+<BorderGlow
+  background-color="#1a1205"
+  :border-radius="8"
+  :glow-radius="32"
+  :glow-intensity="1.2"
+  glow-color="38 90 60"
+  :colors="['#fbbf24', '#d97706', '#fde68a']"
+  :animated="true"
+  class-name="w-full"
+>
+  <div class="rounded-lg px-6 py-5">
+    <div class="text-xs font-mono text-white/25 mb-2 tracking-wide">glow-box · takeaway-card · amber</div>
+    <div class="text-3xl mb-2">📦</div>
+    <div class="font-bold mb-2">Takeaway Two</div>
+    One sentence explaining the second takeaway.
+  </div>
+</BorderGlow>
+
+<BorderGlow
+  background-color="#12061a"
+  :border-radius="8"
+  :glow-radius="32"
+  :glow-intensity="1.2"
+  glow-color="270 80 60"
+  :colors="['#c084fc', '#9333ea', '#e9d5ff']"
+  :animated="true"
+  class-name="w-full"
+>
+  <div class="rounded-lg px-6 py-5">
+    <div class="text-xs font-mono text-white/25 mb-2 tracking-wide">glow-box · takeaway-card · violet</div>
+    <div class="text-3xl mb-2">🗣️</div>
+    <div class="font-bold mb-2">Takeaway Three</div>
+    One sentence explaining the third takeaway.
+  </div>
+</BorderGlow>
+
+</div>
+
+<div class="mt-8 flex justify-center">
+<div class="text-sm font-mono text-white/30">
+hover each card · `:animated="true"` plays on mount · swap colors to match any accent
+</div>
 </div>
